@@ -9,8 +9,8 @@ function App() {
   return (
     
     <div onSubmit={e =>{ e.preventDefault(); }}>
-    {/* <BrowserRouter basename='/promotions'> */}
-    <BrowserRouter >
+    <BrowserRouter basename='/promotions'>
+    {/* <BrowserRouter > */}
        <Routes>
           <Route exact path='*' element={<P />} />
           <Route exact path='/p' element={<Pulque />} />
