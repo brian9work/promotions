@@ -200,6 +200,15 @@
    display: flex;
    flex-direction: column;
   }
+  .content-loader p {
+  display: block;
+  top: 100%;
+  text-align: center;
+  color: #0ce700;
+  font-size: 25px;
+  font-family: 'Righteous', sans-serif;
+  letter-spacing: 1px;
+}
   .typewriter {
     --blue: #0ce700;
     --blue-dark: #089d00;
@@ -215,15 +224,6 @@
     
   }
   
-  .content-loader p {
-  display: block;
-  top: 100%;
-  text-align: center;
-  color: #0ce700;
-  font-size: 25px;
-  font-family: 'Righteous', sans-serif;
-  letter-spacing: 1px;
-}
   .typewriter .slide {
     width: 92px;
     height: 20px;
@@ -335,6 +335,135 @@
     -webkit-animation: keyboard05 var(--duration) linear infinite;
     animation: keyboard05 var(--duration) linear infinite;
   }
+
+  /******************** ERROR *************** */
+  .typewriterError {
+   --blue: #e70000;
+   --blue-dark: #9d0000;
+   --key: #fff;
+   --paper: #EEF0FD;
+   --text: #D3D4EC;
+   --tool: #FBC56C;
+   --duration: 3s;
+   position: relative;
+   margin: 10vh auto;
+   -webkit-animation: bounce05 var(--duration) linear infinite;
+   animation: bounce05 var(--duration) linear infinite;
+   
+ }
+ 
+ .typewriterError .slide {
+   width: 92px;
+   height: 20px;
+   border-radius: 3px;
+   margin-left: 14px;
+   transform: translateX(14px);
+   background: linear-gradient(var(--blue), var(--blue-dark));
+   -webkit-animation: slide05 var(--duration) ease infinite;
+   animation: slide05 var(--duration) ease infinite;
+ }
+ 
+ .typewriterError .slide:before, .typewriterError .slide:after,
+ .typewriterError .slide i:before {
+   content: "";
+   position: absolute;
+   background: var(--tool);
+ }
+ 
+ .typewriterError .slide:before {
+   width: 2px;
+   height: 8px;
+   top: 6px;
+   left: 100%;
+ }
+ 
+ .typewriterError .slide:after {
+   left: 94px;
+   top: 3px;
+   height: 14px;
+   width: 6px;
+   border-radius: 3px;
+ }
+ 
+ .typewriterError .slide i {
+   display: block;
+   position: absolute;
+   right: 100%;
+   width: 6px;
+   height: 4px;
+   top: 4px;
+   background: var(--tool);
+ }
+ 
+ .typewriterError .slide i:before {
+   right: 100%;
+   top: -2px;
+   width: 4px;
+   border-radius: 2px;
+   height: 14px;
+ }
+ 
+ .typewriterError .paper {
+   position: absolute;
+   left: 24px;
+   top: -26px;
+   width: 40px;
+   height: 46px;
+   border-radius: 5px;
+   background: var(--paper);
+   transform: translateY(46px);
+   -webkit-animation: paper05 var(--duration) linear infinite;
+   animation: paper05 var(--duration) linear infinite;
+ }
+ 
+ .typewriterError .paper:before {
+   content: "";
+   position: absolute;
+   left: 6px;
+   right: 6px;
+   top: 7px;
+   border-radius: 2px;
+   height: 4px;
+   transform: scaleY(0.8);
+   background: var(--text);
+   box-shadow: 0 12px 0 var(--text), 0 24px 0 var(--text), 0 36px 0 var(--text);
+ }
+ 
+ .typewriterError .keyboard {
+   width: 120px;
+   height: 56px;
+   margin-top: -10px;
+   z-index: 1;
+   position: relative;
+ }
+ 
+ .typewriterError .keyboard:before, .typewriterError .keyboard:after {
+   content: "";
+   position: absolute;
+ }
+ 
+ .typewriterError .keyboard:before {
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   border-radius: 7px;
+   background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+   transform: perspective(10px) rotateX(2deg);
+   transform-origin: 50% 100%;
+ }
+ 
+ .typewriterError .keyboard:after {
+   left: 2px;
+   top: 25px;
+   width: 11px;
+   height: 4px;
+   border-radius: 2px;
+   box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+   -webkit-animation: keyboard05 var(--duration) linear infinite;
+   animation: keyboard05 var(--duration) linear infinite;
+ }
+
   
   @keyframes bounce05 {
     85%, 92%, 100% {

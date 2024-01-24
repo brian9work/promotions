@@ -57,5 +57,17 @@ const Machine = ({ children }) => {
         </div>
     )
 }
+const MachineError = ({ children }) => {
+    return (
+        <div className="content-loader">
+            <div className="typewriterError">
+                <div className="slide"><i></i></div>
+                <div className="paper"></div>
+                <div className="keyboard"></div>
+            </div>
+                <p style={{color:"#f00"}}>{children}</p>
+        </div>
+    )
+}
 
-export { Book, Machine };
+export { Book, Machine,MachineError };

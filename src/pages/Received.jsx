@@ -5,11 +5,11 @@ import header from '../assets/header.png';
 import promo from '../assets/promo.png';
 import visitanos from '../assets/visitanos.png';
 import Button from './components/Button';
-import {Book, Machine} from './components/Loaders';
+import {Book, Machine,MachineError} from './components/Loaders';
 
 const ReceivedCode = ({ input }) => {
    const { code } = useParams();
-   const [change, setChange] = useState(true)
+   const [change, setChange] = useState("2")
 
    const updatePromo = async () => {
       try {
@@ -23,7 +23,13 @@ const ReceivedCode = ({ input }) => {
          }).then(res => res.text())
             .then(r => {
                console.log(r)
-               setChange(true)
+               if(r=="1") setChange("1")
+               else if(r=="2") setChange("2")
+               else {
+                  alert("Error");
+                  console.log(r)
+               }
+               // setChange("1")
             })
             .catch(err => console.log(err));
       } catch (error) {
@@ -42,14 +48,18 @@ const ReceivedCode = ({ input }) => {
             </div>
             <div className="aplication">
                <img className='header' src={header} alt="" />
-               {change ?
+               {change=="1" ?
                   <Book>
                      Codigo {code} Guardado
                   </Book>
-                  :
+                  : change=="0" ?
                   <Machine>
                      Guardando codigo {code}
                   </Machine>
+                  :
+                  <MachineError>
+                     El codigo {code} ya ha sido usado
+                  </MachineError>
                }
             </div>
          </div>
