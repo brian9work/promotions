@@ -4,6 +4,24 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+#code{
+    width: 100%;
+    background-color: #0000;
+    color: #fff;
+    margin-bottom: 20px;
+    border: 0;
+    border-bottom: 2px solid #2fff40;
+    padding: 10px 0;
+    font-size: 40px;
+    font-family: 'Righteous', sans-serif;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    outline: none;
+    &::placeholder{
+        color: rgb(150, 150, 150);
+    }
+}
 .container{
     padding-bottom: 30vh;
     .content{

@@ -6,6 +6,7 @@ import header from '../assets/header.png';
 import promo from '../assets/promo.png';
 import visitanos from '../assets/visitanos.png';
 import Button from './components/Button';
+import { Machine } from './components/Loaders';
 // import axios from 'axios'
 
 const Loading = ({ event }) => {
@@ -103,7 +104,7 @@ const Form = ({ event }) => {
             .catch(err => console.log(err))
     }
 
-    const Input = ({ text, type, name, placeholder }) => {
+    const Input = ({ text, type, name, placeholder, maxlength }) => {
         const [value, setValue] = useState('');
         return (
             <div className='input'>
@@ -114,6 +115,7 @@ const Form = ({ event }) => {
                     placeholder={placeholder}
                     id={name}
                     name={name}
+                    maxLength={maxlength}
                     onChange={(e) => { setValue(e.target.value) }} />
             </div>
         )
@@ -123,9 +125,9 @@ const Form = ({ event }) => {
             <form id='form'>
                 <h2>Ya casi terminamos</h2>
                 <p>Por favor complete el formulario para verificar que eres un humano</p>
-                <Input text="Correo: *" type="email" name="email" placeholder="correo@correo.com" />
-                <Input text="Nombre: *" type="text" name="name" placeholder="Ivan Mendoza" />
-                <Input text="Telefono: " type="tel" name="phone" placeholder="123 456 7890" />
+                <Input text="Correo: *" type="email" name="email" placeholder="correo@correo.com" maxlength="40" />
+                <Input text="Nombre: *" type="text" name="name" placeholder="Ivan Mendoza" maxlength="50" />
+                <Input text="Telefono: " type="tel" name="phone" placeholder="123 456 7890" maxlength="12" />
 
                 <p className='mensaje'> * Campos Obligatorios</p>
                 <div className="check">
@@ -140,7 +142,7 @@ const Form = ({ event }) => {
                 }}>¡Generar Codigo y descargar PDF!</Button>
             </form>
         )
-    else return (<Loading />)
+    else return (<Machine />)
 }
 const Pabellon = ({ event }) => {
     return (
@@ -184,7 +186,6 @@ const Promo = ({ event }) => {
         </>
     )
 }
-
 const Pulque = () => {
     const [pantalla, setPantalla] = useState(0);
 
