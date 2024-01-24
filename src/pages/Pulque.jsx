@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/style.css"
 import "../styles/loader.css"
-import background from '../assets/background.png';
+import background from '../assets/background.webp';
 import header from '../assets/header.png';
 import promo from '../assets/promo.png';
 import visitanos from '../assets/visitanos.png';
