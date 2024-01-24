@@ -1,5 +1,6 @@
 git add .
-git commit -m "Development"
+git commit -m "se cambiaron las imagenes"
 git push
 npm run build
 npm run deploy
+
