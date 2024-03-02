@@ -68,7 +68,7 @@ const Form = ({ event }) => {
         const { email: em, name: na, phone: ph, adds: ad } = exp
         if (!em.test(email.value)) { return alert("Por favor escriba un correo valido") }
         if (!na.test(name.value)) { return alert("Por favor escriba un nombre valido") }
-        if (!ph.test(phone.value)) { return alert("Por favor escriba un telefono valido") }
+        // if (!ph.test(phone.value)) { return alert("Por favor escriba un telefono valido") }
         if (!ad.test(adds.checked)) { return alert("WFT amigo vos estas re loco 🥱😴") }
 
         e.preventDefault();
@@ -81,7 +81,7 @@ const Form = ({ event }) => {
         formData.append('type', 'post');
         formData.append('email', email.value);
         formData.append('name', name.value);
-        formData.append('phone', phone.value);
+        formData.append('phone', "asl");
         formData.append('adds', adds.checked);
         formData.append('scan', localStorage.getItem('reserver'));
 
@@ -127,7 +127,7 @@ const Form = ({ event }) => {
                 <p>Por favor complete el formulario para verificar que eres un humano</p>
                 <Input text="Correo: *" type="email" name="email" placeholder="correo@correo.com" maxlength="40" />
                 <Input text="Nombre: *" type="text" name="name" placeholder="Ivan Mendoza" maxlength="50" />
-                <Input text="Telefono: " type="tel" name="phone" placeholder="123 456 7890" maxlength="12" />
+                <Input text="" type="hidden" name="phone" placeholder="123 456 7890" maxlength="12" />
 
                 <p className='mensaje'> * Campos Obligatorios</p>
                 <div className="check">
